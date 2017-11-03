@@ -12,6 +12,7 @@
 		0F20BEF21FA66241006F754E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0F20BEF01FA66241006F754E /* Main.storyboard */; };
 		0F20BEF41FA66241006F754E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0F20BEF31FA66241006F754E /* Assets.xcassets */; };
 		0F20BEF71FA66241006F754E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0F20BEF51FA66241006F754E /* LaunchScreen.storyboard */; };
+		0F20BEFF1FA662F4006F754E /* PhotoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F20BEFE1FA662F4006F754E /* PhotoViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +23,7 @@
 		0F20BEF31FA66241006F754E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0F20BEF61FA66241006F754E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0F20BEF81FA66241006F754E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0F20BEFE1FA662F4006F754E /* PhotoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +62,7 @@
 				0F20BEF31FA66241006F754E /* Assets.xcassets */,
 				0F20BEF51FA66241006F754E /* LaunchScreen.storyboard */,
 				0F20BEF81FA66241006F754E /* Info.plist */,
+				0F20BEFE1FA662F4006F754E /* PhotoViewController.swift */,
 			);
 			path = "Dairy One";
 			sourceTree = "<group>";
@@ -138,6 +141,7 @@
 			files = (
 				0F20BEEF1FA66241006F754E /* ViewController.swift in Sources */,
 				0F20BEED1FA66241006F754E /* AppDelegate.swift in Sources */,
+				0F20BEFF1FA662F4006F754E /* PhotoViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -275,6 +279,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = SW5BW533U9;
 				INFOPLIST_FILE = "Dairy One/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "haoyuan.Dairy-One";
@@ -289,6 +294,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = SW5BW533U9;
 				INFOPLIST_FILE = "Dairy One/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "haoyuan.Dairy-One";
