@@ -60,8 +60,41 @@ class ViewController: UIViewController,AVCaptureVideoDataOutputSampleBufferDeleg
 	
 	}
 	
+	@IBAction func takePhoto(_ sender: Any) {
+		takephoto = true;
+		
+	}
 	func captureOutput(_ output: AVCaptureOutput, didDrop sampleBuffer: CMSampleBuffer, from connection: AVCaptureConnection) {
-		<#code#>
+		if takephoto {
+			takephoto = false;
+			//getImagefromSampleBuffer
+			if let image = self.getImagefromSampleBuffer(buffer: sampleBuffer){
+				let photoVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "PhotoVC") as! PhotoViewController
+				photoVC.takenPhoto = image
+				DispatchQueue.main.async {
+					self.present(photoVC, animated: true, completion: nil)
+					
+				}
+			}
+			
+		}
+	}
+	
+	func getImagefromSampleBuffer (buffer: CMSampleBuffer) -> UIImage?{
+		if let pixelBuffer = CMSampleBufferGetImageBuffer(buffer) {
+			let ciImage = CIImage(cvPixelBuffer:pixelBuffer)
+			let context = CIContext()
+			
+			let imageRect = CGRect(x:0,y:0,width:CVPixelBufferGetWidth(pixelBuffer),height:
+			CVPixelBufferGetHeight(pixelBuffer))
+			if let image = context.createCGImage(ciImage, from: imageRect) {
+				return UIImage(cgImage: image, scale: UIScreen.main.scale, orientation: .right)
+				
+			}
+			
+		}
+		return nil
+		
 	}
 	
 

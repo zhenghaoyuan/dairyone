@@ -9,7 +9,7 @@
 import UIKit
 
 class PhotoViewController: UIViewController {
-	let takenPhoto:UIImage? = nil
+	var takenPhoto:UIImage? = nil
 	
 	@IBOutlet weak var imageView: UIImageView!
 	
