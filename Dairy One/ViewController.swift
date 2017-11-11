@@ -19,9 +19,12 @@ class ViewController: UIViewController,AVCaptureVideoDataOutputSampleBufferDeleg
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		// Do any additional setup after loading the view, typically from a nib.
+		
+	}
+	
+	override func viewWillAppear(_ animated: Bool) {
+		super.viewWillAppear(animated);
 		prepareCamera();
-		
-		
 	}
 	
 	func prepareCamera(){
@@ -30,6 +33,7 @@ class ViewController: UIViewController,AVCaptureVideoDataOutputSampleBufferDeleg
 		let availableDevices = AVCaptureDevice.DiscoverySession(deviceTypes:[.builtInWideAngleCamera],mediaType:AVMediaType.video,position:.front).devices
 		
 		captureDevice = availableDevices.first;
+		print("haha, I am here1");
 		beginSession()
 	}
 	
@@ -42,8 +46,10 @@ class ViewController: UIViewController,AVCaptureVideoDataOutputSampleBufferDeleg
 			print(error.localizedDescription)
 		}
 		let preview = AVCaptureVideoPreviewLayer(session: captureSession)
+		preview.videoGravity = AVLayerVideoGravity.resizeAspectFill;
+		preview.connection?.videoOrientation = AVCaptureVideoOrientation.portrait;
 		self.previewLayer = preview;
-		self.view.layer.addSublayer(self.previewLayer)
+		self.view.layer.insertSublayer(preview, at: 0);
 		self.previewLayer.frame = self.view.layer.frame
 		captureSession.startRunning()
 		
@@ -51,10 +57,8 @@ class ViewController: UIViewController,AVCaptureVideoDataOutputSampleBufferDeleg
 		dataOutput.videoSettings = [(kCVPixelBufferPixelFormatTypeKey as String) : NSNumber(value:kCVPixelFormatType_32BGRA)]
 		if captureSession.canAddOutput(dataOutput) {
 			captureSession.addOutput(dataOutput)
-			
 		}
-		captureSession.commitConfiguration()
-		
+		captureSession.commitConfiguration();
 		let queue = DispatchQueue(label:"haoyuan")
 		dataOutput.setSampleBufferDelegate(self, queue: queue)
 	
@@ -62,7 +66,7 @@ class ViewController: UIViewController,AVCaptureVideoDataOutputSampleBufferDeleg
 	
 	@IBAction func takePhoto(_ sender: Any) {
 		takephoto = true;
-		
+
 	}
 	func captureOutput(_ output: AVCaptureOutput, didDrop sampleBuffer: CMSampleBuffer, from connection: AVCaptureConnection) {
 		if takephoto {
@@ -72,7 +76,10 @@ class ViewController: UIViewController,AVCaptureVideoDataOutputSampleBufferDeleg
 				let photoVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "PhotoVC") as! PhotoViewController
 				photoVC.takenPhoto = image
 				DispatchQueue.main.async {
-					self.present(photoVC, animated: true, completion: nil)
+					self.present(photoVC, animated: true, completion:{
+						self.stopCaptureSession();
+						
+					})
 					
 				}
 			}
@@ -97,6 +104,15 @@ class ViewController: UIViewController,AVCaptureVideoDataOutputSampleBufferDeleg
 		
 	}
 	
+	func stopCaptureSession() {
+		self.captureSession.stopRunning();
+		if let inputs = captureSession.inputs as? [AVCaptureDeviceInput] {
+			for input in inputs {
+				self.captureSession.removeInput(input);
+			}
+		}
+		
+	}
 
 	override func didReceiveMemoryWarning() {
 		super.didReceiveMemoryWarning()

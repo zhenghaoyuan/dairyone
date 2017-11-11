@@ -34,6 +34,10 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
+	<key>NSPhotoLibraryAddUsageDescription</key>
+	<string>To record your daily life</string>
+	<key>NSMicrophoneUsageDescription</key>
+	<string>To record your daily life</string>
 	<key>NSCameraUsageDescription</key>
 	<string>To record your daily life</string>
 	<key>UISupportedInterfaceOrientations~ipad</key>
