@@ -29,6 +29,8 @@ AVCaptureFileOutputRecordingDelegate {
 	
 	override func viewWillAppear(_ animated: Bool) {
 		super.viewWillAppear(animated);
+		self.navigationController?.isNavigationBarHidden = true;
+		self.tabBarController?.tabBar.isHidden = true;
 		prepareCamera();
 	}
 	
@@ -78,6 +80,11 @@ AVCaptureFileOutputRecordingDelegate {
 //			captureSession.addOutput(dataOutput)
 //		}
 		captureSession.addOutput(movieFileOutput);
+		if let videoOutput = self.movieFileOutput.connection(with: .video) {
+			videoOutput.videoOrientation = AVCaptureVideoOrientation.portrait;
+			print("I have set the video orientation");
+			
+		}
 		
 		captureSession.commitConfiguration();
 //		let queue = DispatchQueue(label:"haoyuan")
@@ -88,6 +95,9 @@ AVCaptureFileOutputRecordingDelegate {
 	func stopRecording() {
 		print("stopping");
 		self.movieFileOutput.stopRecording();
+		
+		
+		
 	}
 	//start recording the video, and store the video into the gallery first
 	func startRecording() {
@@ -95,6 +105,7 @@ AVCaptureFileOutputRecordingDelegate {
 		let paths = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)
 		let fileUrl = paths[0].appendingPathComponent("output.mov")
 		try? FileManager.default.removeItem(at: fileUrl)
+		
 		movieFileOutput.startRecording(to: fileUrl, recordingDelegate: self)
 		//let delayTime = DispatchTime.now() + 10
 		//DispatchQueue.main.asyncAfter(deadline: delayTime) {
@@ -103,15 +114,30 @@ AVCaptureFileOutputRecordingDelegate {
 		//}
 	}
 	
-	//delegate,after finishing record, and change the
-	//navigation bar
+	//,after finishing record,
 	func fileOutput(_ output: AVCaptureFileOutput, didFinishRecordingTo outputFileURL: URL, from connections: [AVCaptureConnection], error: Error?) {
 		print("FINISHED")
 		if error == nil {
 			UISaveVideoAtPathToSavedPhotosAlbum(outputFileURL.path, nil, nil, nil);
 		}
-		//change the viewcontroller back to the library view, and catch the thunbnail of
-		// the video
+		//change the viewcontroller back to the library view, and catch the thunbnail of the video
+		let asset = AVURLAsset(url: outputFileURL, options: nil)
+		let imgGenerator = AVAssetImageGenerator(asset: asset)
+		do{
+			let cgImage = try imgGenerator.copyCGImage(at: CMTimeMake(0, 1), actualTime: nil)
+			let uiImage = UIImage(cgImage: cgImage);
+			print(uiImage);
+			//let imageView = UIImageView(image: uiImage)
+			photoDB.sharedInstance.photo.append(uiImage);
+			photoDB.sharedInstance.rotation.append(false);
+			presentingViewController?.dismiss(animated: true, completion: nil);
+			print("give a value to the image");
+		}catch {
+			print("error in generating thumbnail of image");
+		}
+		// !! check the error before proceeding
+		
+		
 		
 	}
 	//tap the button, add some animation to it.

@@ -14,6 +14,9 @@
 		0F20BEF71FA66241006F754E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0F20BEF51FA66241006F754E /* LaunchScreen.storyboard */; };
 		0F20BEFF1FA662F4006F754E /* PhotoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F20BEFE1FA662F4006F754E /* PhotoViewController.swift */; };
 		0F51D5271FB690D6009C4C51 /* cameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F51D5261FB690D6009C4C51 /* cameraViewController.swift */; };
+		0FF1B5FA1FB8EB2500FE99B9 /* photoDB.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FF1B5F91FB8EB2500FE99B9 /* photoDB.swift */; };
+		0FF1B5FE1FBA255B00FE99B9 /* photoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FF1B5FD1FBA255B00FE99B9 /* photoCell.swift */; };
+		0FF1B6001FBA93A400FE99B9 /* calendarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FF1B5FF1FBA93A400FE99B9 /* calendarViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +29,9 @@
 		0F20BEF81FA66241006F754E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0F20BEFE1FA662F4006F754E /* PhotoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoViewController.swift; sourceTree = "<group>"; };
 		0F51D5261FB690D6009C4C51 /* cameraViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = cameraViewController.swift; sourceTree = "<group>"; };
+		0FF1B5F91FB8EB2500FE99B9 /* photoDB.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = photoDB.swift; sourceTree = "<group>"; };
+		0FF1B5FD1FBA255B00FE99B9 /* photoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = photoCell.swift; sourceTree = "<group>"; };
+		0FF1B5FF1FBA93A400FE99B9 /* calendarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = calendarViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,6 +72,9 @@
 				0F20BEF81FA66241006F754E /* Info.plist */,
 				0F20BEFE1FA662F4006F754E /* PhotoViewController.swift */,
 				0F51D5261FB690D6009C4C51 /* cameraViewController.swift */,
+				0FF1B5F91FB8EB2500FE99B9 /* photoDB.swift */,
+				0FF1B5FD1FBA255B00FE99B9 /* photoCell.swift */,
+				0FF1B5FF1FBA93A400FE99B9 /* calendarViewController.swift */,
 			);
 			path = "Dairy One";
 			sourceTree = "<group>";
@@ -144,8 +153,11 @@
 			files = (
 				0F20BEEF1FA66241006F754E /* ViewController.swift in Sources */,
 				0F51D5271FB690D6009C4C51 /* cameraViewController.swift in Sources */,
+				0FF1B5FE1FBA255B00FE99B9 /* photoCell.swift in Sources */,
 				0F20BEED1FA66241006F754E /* AppDelegate.swift in Sources */,
+				0FF1B6001FBA93A400FE99B9 /* calendarViewController.swift in Sources */,
 				0F20BEFF1FA662F4006F754E /* PhotoViewController.swift in Sources */,
+				0FF1B5FA1FB8EB2500FE99B9 /* photoDB.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
