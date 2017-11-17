@@ -130,6 +130,8 @@ AVCaptureFileOutputRecordingDelegate {
 			//let imageView = UIImageView(image: uiImage)
 			photoDB.sharedInstance.photo.append(uiImage);
 			photoDB.sharedInstance.rotation.append(false);
+			photoDB.sharedInstance.date.append(Date());
+			photoDB.sharedInstance.URL.append(outputFileURL);
 			presentingViewController?.dismiss(animated: true, completion: nil);
 			print("give a value to the image");
 		}catch {

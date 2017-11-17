@@ -14,10 +14,10 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "0F20BEE81FA66241006F754E"
-               BuildableName = "Dairy One.app"
-               BlueprintName = "Dairy One"
-               ReferencedContainer = "container:Dairy One.xcodeproj">
+               BlueprintIdentifier = "DA8288ED9C23FED8D79708FFAF8CD7C2"
+               BuildableName = "Pods_Dairy_One.framework"
+               BlueprintName = "Pods-Dairy One"
+               ReferencedContainer = "container:Pods.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -30,15 +30,6 @@
       shouldUseLaunchSchemeArgsEnv = "YES">
       <Testables>
       </Testables>
-      <MacroExpansion>
-         <BuildableReference
-            BuildableIdentifier = "primary"
-            BlueprintIdentifier = "0F20BEE81FA66241006F754E"
-            BuildableName = "Dairy One.app"
-            BlueprintName = "Dairy One"
-            ReferencedContainer = "container:Dairy One.xcodeproj">
-         </BuildableReference>
-      </MacroExpansion>
       <AdditionalOptions>
       </AdditionalOptions>
    </TestAction>
@@ -53,16 +44,15 @@
       debugDocumentVersioning = "YES"
       debugServiceExtension = "internal"
       allowLocationSimulation = "YES">
-      <BuildableProductRunnable
-         runnableDebuggingMode = "0">
+      <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "0F20BEE81FA66241006F754E"
-            BuildableName = "Dairy One.app"
-            BlueprintName = "Dairy One"
-            ReferencedContainer = "container:Dairy One.xcodeproj">
+            BlueprintIdentifier = "DA8288ED9C23FED8D79708FFAF8CD7C2"
+            BuildableName = "Pods_Dairy_One.framework"
+            BlueprintName = "Pods-Dairy One"
+            ReferencedContainer = "container:Pods.xcodeproj">
          </BuildableReference>
-      </BuildableProductRunnable>
+      </MacroExpansion>
       <AdditionalOptions>
       </AdditionalOptions>
    </LaunchAction>
@@ -72,16 +62,6 @@
       savedToolIdentifier = ""
       useCustomWorkingDirectory = "NO"
       debugDocumentVersioning = "YES">
-      <BuildableProductRunnable
-         runnableDebuggingMode = "0">
-         <BuildableReference
-            BuildableIdentifier = "primary"
-            BlueprintIdentifier = "0F20BEE81FA66241006F754E"
-            BuildableName = "Dairy One.app"
-            BlueprintName = "Dairy One"
-            ReferencedContainer = "container:Dairy One.xcodeproj">
-         </BuildableReference>
-      </BuildableProductRunnable>
    </ProfileAction>
    <AnalyzeAction
       buildConfiguration = "Debug">

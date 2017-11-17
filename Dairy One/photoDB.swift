@@ -22,5 +22,10 @@ class photoDB {
 	// This is a kind of compromise because I don't know how to rotate the video from output source,
 	// So I have to rotate in imageview. And to prevent the multiple rotation, I want it is done only once
 	var rotation :[Bool?] = []
+	
+	var date :[Date] = []
+	
+	var URL:[URL] = []
+	
 
 }

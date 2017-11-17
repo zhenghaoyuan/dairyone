@@ -1,0 +1,6 @@
+framework module Pods_Dairy_One {
+  umbrella header "Pods-Dairy One-umbrella.h"
+
+  export *
+  module * { export * }
+}
